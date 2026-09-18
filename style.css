@@ -1,0 +1,2599 @@
+/* =========================================================
+   ZARK BURGER — CLEAN PREMIUM RED / WHITE DESIGN
+   ========================================================= */
+
+:root {
+    --red: #ed1c24;
+    --red-dark: #c81018;
+    --red-light: #fff0f1;
+    --white: #ffffff;
+    --off-white: #f7f7f5;
+    --black: #171717;
+    --gray: #666666;
+    --light-gray: #e8e8e5;
+    --border: #dededb;
+    --shadow: 0 24px 70px rgba(23, 23, 23, 0.12);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--white);
+    color: var(--black);
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+section {
+    position: relative;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 82px;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(23, 23, 23, 0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 145px;
+    height: 50px;
+}
+
+.logo img {
+    display: block;
+    width: 145px;
+    height: 50px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-links a {
+    position: relative;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--black);
+    transition: color .25s ease;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: var(--red);
+    transition: width .25s ease;
+}
+
+.nav-links a:hover {
+    color: var(--red);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-order {
+    background: var(--red);
+    color: var(--white);
+    padding: 15px 22px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    transition: .3s ease;
+}
+
+.nav-order:hover {
+    background: var(--red-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(237, 28, 36, .22);
+}
+
+.mobile-menu-button {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--black);
+    font-size: 26px;
+    cursor: pointer;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    min-height: 100vh;
+    padding: 150px 7vw 90px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 78% 48%, rgba(237, 28, 36, .10), transparent 27%),
+        linear-gradient(135deg, #ffffff 0%, #ffffff 65%, #fff5f5 100%);
+}
+
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: .35;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(237,28,36,.18) 1px, transparent 1px);
+    background-size: 28px 28px;
+    mask-image: linear-gradient(to right, transparent, black 55%, transparent);
+}
+
+.hero::after {
+    content: "Z";
+    position: absolute;
+    right: -3vw;
+    bottom: -14vw;
+    font-size: 45vw;
+    line-height: .7;
+    font-weight: 900;
+    color: rgba(237, 28, 36, .035);
+    pointer-events: none;
+}
+
+.hero-content {
+    width: 52%;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-location {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--red);
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 900;
+    margin-bottom: 28px;
+}
+
+.hero-location::before {
+    content: "";
+    width: 38px;
+    height: 2px;
+    background: var(--red);
+}
+
+.hero h1 {
+    font-size: clamp(78px, 10vw, 160px);
+    line-height: .78;
+    letter-spacing: -8px;
+    font-weight: 950;
+    text-transform: uppercase;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--red);
+}
+
+.hero-subtitle {
+    margin-top: 48px;
+    max-width: 520px;
+    font-size: 24px;
+    line-height: 1.15;
+    font-weight: 800;
+}
+
+.hero-description {
+    margin-top: 18px;
+    max-width: 480px;
+    color: var(--gray);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.button {
+    min-height: 54px;
+    padding: 0 27px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.3px;
+    transition: .3s ease;
+}
+
+.button:hover {
+    transform: translateY(-4px);
+}
+
+.button-primary {
+    background: var(--red);
+    color: var(--white);
+    box-shadow: 0 12px 28px rgba(237, 28, 36, .18);
+}
+
+.button-primary:hover {
+    background: var(--red-dark);
+    box-shadow: 0 16px 35px rgba(237, 28, 36, .25);
+}
+
+.button-secondary {
+    border: 1px solid var(--black);
+    color: var(--black);
+    background: transparent;
+}
+
+.button-secondary:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.button-white {
+    margin-top: 32px;
+    background: var(--white);
+    color: var(--red);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 34px;
+    margin-top: 58px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    max-width: 560px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-stats strong {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.hero-stats span {
+    color: var(--gray);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.hero-burger {
+    position: absolute;
+    right: 4vw;
+    top: 53%;
+    transform: translateY(-50%);
+    width: 47vw;
+    max-width: 700px;
+    height: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+}
+
+.burger-red-circle {
+    position: absolute;
+    width: min(39vw, 560px);
+    height: min(39vw, 560px);
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 30px 80px rgba(237, 28, 36, .25);
+}
+
+.hero-burger-image {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    max-width: 650px;
+    filter: drop-shadow(0 35px 30px rgba(0,0,0,.25));
+    animation: heroFloat 5s ease-in-out infinite;
+}
+
+.hero-badge {
+    position: absolute;
+    right: 2%;
+    top: 17%;
+    z-index: 5;
+    width: 94px;
+    height: 94px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--red);
+    font-size: 18px;
+    line-height: .8;
+    font-weight: 950;
+    text-align: center;
+    transform: rotate(10deg);
+    box-shadow: var(--shadow);
+}
+
+.hero-badge small {
+    margin-top: 8px;
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.burger-orbit {
+    position: absolute;
+    border: 1px solid rgba(237, 28, 36, .25);
+    border-radius: 50%;
+}
+
+.orbit-one {
+    width: 65%;
+    height: 65%;
+}
+
+.orbit-two {
+    width: 83%;
+    height: 83%;
+    border-style: dashed;
+    animation: spin 25s linear infinite;
+}
+
+.scroll-indicator {
+    position: absolute;
+    left: 7vw;
+    bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gray);
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator span {
+    width: 35px;
+    height: 2px;
+    background: var(--red);
+}
+
+@keyframes heroFloat {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.burger-story {
+    min-height: 100vh;
+    padding: 130px 7vw;
+    background: var(--red);
+    color: var(--white);
+    overflow: hidden;
+}
+
+.burger-story::before {
+    content: "SMASH";
+    position: absolute;
+    right: -5vw;
+    bottom: -5vw;
+    font-size: 24vw;
+    font-weight: 950;
+    line-height: .7;
+    color: rgba(255,255,255,.08);
+}
+
+.story-inner {
+    min-height: 75vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+}
+
+.story-copy small,
+.section-heading small,
+.location-title small,
+.bite-content small,
+.order-content small {
+    color: inherit;
+    font-size: 10px;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+
+.story-copy h2 {
+    margin-top: 18px;
+    font-size: clamp(65px, 8vw, 125px);
+    line-height: .8;
+    letter-spacing: -6px;
+}
+
+.story-copy h2 span {
+    color: var(--black);
+}
+
+.story-copy p {
+    margin-top: 35px;
+    max-width: 480px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255,255,255,.88);
+}
+
+.story-burger {
+    position: relative;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-burger img {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 600px;
+    filter: drop-shadow(0 30px 30px rgba(0,0,0,.22));
+    animation: heroFloat 6s ease-in-out infinite;
+}
+
+.story-ring {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+}
+
+.story-label {
+    position: absolute;
+    z-index: 4;
+    padding: 9px 14px;
+    background: var(--white);
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.label-top { top: 16%; right: 9%; transform: rotate(5deg); }
+.label-middle { left: 8%; top: 48%; transform: rotate(-5deg); }
+.label-bottom { right: 10%; bottom: 16%; transform: rotate(4deg); }
+
+/* =========================================================
+   WHY ZARK
+   ========================================================= */
+
+.why-zark {
+    padding: 140px 7vw;
+    background: var(--off-white);
+}
+
+.section-heading {
+    max-width: 900px;
+}
+
+.section-heading small,
+.menu-heading small {
+    color: var(--red);
+}
+
+.section-heading h2 {
+    margin-top: 18px;
+    font-size: clamp(65px, 8vw, 130px);
+    line-height: .8;
+    letter-spacing: -6px;
+}
+
+.section-heading h2 span {
+    color: var(--red);
+}
+
+.section-heading > p {
+    margin-top: 28px;
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.feature-grid {
+    margin-top: 90px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.feature-card {
+    min-height: 330px;
+    padding: 30px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+    transition: .35s ease;
+}
+
+.feature-card:hover {
+    background: var(--white);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.feature-card > span {
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.feature-icon {
+    position: absolute;
+    right: 25px;
+    top: 24px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--red-light);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.feature-card h3 {
+    margin-top: 85px;
+    font-size: 30px;
+    line-height: .9;
+    letter-spacing: -1px;
+}
+
+.feature-card p {
+    margin-top: 25px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   MARQUEE
+   ========================================================= */
+
+.marquee-section {
+    overflow: hidden;
+    padding: 30px 0;
+    background: var(--black);
+}
+
+.marquee {
+    white-space: nowrap;
+    font-size: clamp(45px, 7vw, 100px);
+    font-weight: 950;
+    letter-spacing: -4px;
+    color: var(--white);
+    animation: marqueeMove 18s linear infinite;
+}
+
+.marquee span {
+    color: var(--red);
+    margin: 0 15px;
+}
+
+@keyframes marqueeMove {
+    from { transform: translateX(0); }
+    to { transform: translateX(-35%); }
+}
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu-section {
+    padding: 140px 7vw;
+    background: var(--white);
+}
+
+.menu-heading {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-heading p {
+    max-width: 400px;
+}
+
+.menu-grid {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    min-height: 290px;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    transition: .4s cubic-bezier(.2,.8,.2,1);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(237,28,36,.45);
+    box-shadow: var(--shadow);
+}
+
+.product-card-wide {
+    grid-column: 1 / -1;
+}
+
+.product-image {
+    width: 43%;
+    min-width: 250px;
+    min-height: 290px;
+    position: relative;
+    overflow: hidden;
+    background: var(--red-light);
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform .7s cubic-bezier(.2,.8,.2,1);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.08);
+}
+
+.product-number {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--white);
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+}
+
+.product-info {
+    flex: 1;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-tag {
+    color: var(--red);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.product-info h3 {
+    margin-top: 12px;
+    font-size: 28px;
+    line-height: 1.05;
+    font-weight: 900;
+    letter-spacing: -1px;
+}
+
+.product-info p {
+    margin-top: 16px;
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.product-bottom strong {
+    color: var(--red);
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.product-bottom button {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+    font-size: 25px;
+    line-height: 1;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.product-bottom button:hover {
+    background: var(--red);
+    transform: rotate(90deg);
+}
+
+/* =========================================================
+   BITE
+   ========================================================= */
+
+.bite-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: var(--red);
+    color: var(--white);
+}
+
+.bite-shape {
+    position: absolute;
+    width: 65vw;
+    height: 65vw;
+    max-width: 850px;
+    max-height: 850px;
+    border: 1px solid rgba(255,255,255,.25);
+    border-radius: 50%;
+}
+
+.bite-content {
+    position: relative;
+    z-index: 2;
+}
+
+.bite-content h2 {
+    margin-top: 18px;
+    font-size: clamp(75px, 12vw, 180px);
+    line-height: .78;
+    letter-spacing: -8px;
+}
+
+.bite-content h2 span {
+    color: var(--black);
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.location-section {
+    padding: 140px 7vw;
+    background: var(--off-white);
+}
+
+.location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+}
+
+.location-title small {
+    color: var(--red);
+}
+
+.location-content h2 {
+    margin-top: 20px;
+    font-size: clamp(70px, 9vw, 130px);
+    line-height: .8;
+    letter-spacing: -6px;
+}
+
+.location-content h2 span {
+    color: var(--red);
+}
+
+.location-line {
+    width: 90px;
+    height: 5px;
+    margin-top: 35px;
+    background: var(--red);
+}
+
+.location-details {
+    padding-top: 20px;
+}
+
+.location-details p {
+    margin-bottom: 30px;
+    color: var(--gray);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.location-details strong {
+    color: var(--black);
+}
+
+.location-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* =========================================================
+   ORDER
+   ========================================================= */
+
+.order-section {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 100px 30px;
+    background:
+        radial-gradient(circle at center, rgba(237,28,36,.10), transparent 35%),
+        var(--white);
+}
+
+.order-content small {
+    color: var(--red);
+}
+
+.order-content h2 {
+    margin: 25px 0 45px;
+    font-size: clamp(70px, 11vw, 170px);
+    line-height: .78;
+    letter-spacing: -8px;
+    font-weight: 950;
+}
+
+.order-content h2 span {
+    display: block;
+    color: var(--red);
+}
+
+.order-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 21px 30px;
+    background: var(--red);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    transition: .3s ease;
+}
+
+.order-button span {
+    font-size: 20px;
+}
+
+.order-button:hover {
+    background: var(--red-dark);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(237,28,36,.2);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 65px 7vw 30px;
+    background: var(--black);
+    color: var(--white);
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-logo {
+    font-size: 55px;
+    line-height: .8;
+    font-weight: 950;
+    letter-spacing: -4px;
+}
+
+.footer-logo span {
+    margin-left: 8px;
+    color: var(--red);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.footer-top > div > p {
+    margin-top: 15px;
+    color: #999;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.footer-links a {
+    color: #aaa;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .25s ease;
+}
+
+.footer-links a:hover {
+    color: var(--red);
+}
+
+.footer-info {
+    margin-top: 55px;
+    padding-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    color: #999;
+    font-size: 11px;
+    letter-spacing: 1px;
+    border-top: 1px solid #333;
+}
+
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #333;
+    color: #666;
+    font-size: 10px;
+}
+
+.footer-bottom span {
+    color: var(--red);
+    letter-spacing: 2px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+    .nav-links {
+        gap: 20px;
+    }
+
+    .hero {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .hero-content {
+        width: 56%;
+    }
+
+    .hero-burger {
+        right: -4vw;
+        width: 52vw;
+    }
+
+    .hero-burger-image {
+        width: 100%;
+    }
+
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+    .navbar {
+        height: 70px;
+        padding: 0 20px;
+    }
+
+    .logo,
+    .logo img {
+        width: 125px;
+        height: 45px;
+    }
+
+    .nav-links,
+    .nav-order {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 120px 22px 70px;
+        display: block;
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 22vw;
+        letter-spacing: -5px;
+    }
+
+    .hero-subtitle {
+        margin-top: 35px;
+        font-size: 20px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .hero-stats {
+        gap: 18px;
+        margin-top: 40px;
+    }
+
+    .hero-stats div {
+        flex: 1;
+    }
+
+    .hero-burger {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        height: 360px;
+        margin-top: 20px;
+    }
+
+    .burger-red-circle {
+        width: 290px;
+        height: 290px;
+    }
+
+    .hero-burger-image {
+        width: 105%;
+    }
+
+    .hero-badge {
+        right: 4%;
+        top: 12%;
+        width: 75px;
+        height: 75px;
+        font-size: 14px;
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .burger-story {
+        padding: 90px 22px;
+    }
+
+    .story-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .story-copy h2 {
+        font-size: 60px;
+    }
+
+    .story-burger {
+        min-height: 350px;
+    }
+
+    .story-ring {
+        width: 300px;
+        height: 300px;
+    }
+
+    .story-burger img {
+        width: 105%;
+    }
+
+    .story-label {
+        font-size: 8px;
+    }
+
+    .why-zark,
+    .menu-section,
+    .location-section {
+        padding: 90px 22px;
+    }
+
+    .section-heading h2 {
+        font-size: 60px;
+        letter-spacing: -4px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        margin-top: 55px;
+    }
+
+    .feature-card {
+        min-height: 260px;
+    }
+
+    .feature-card h3 {
+        margin-top: 55px;
+        font-size: 27px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+        margin-top: 55px;
+    }
+
+    .product-card,
+    .product-card-wide {
+        grid-column: auto;
+        flex-direction: column;
+    }
+
+    .product-image {
+        width: 100%;
+        min-width: 0;
+        height: 260px;
+        min-height: 260px;
+    }
+
+    .product-info {
+        padding: 25px;
+    }
+
+    .product-info h3 {
+        font-size: 24px;
+    }
+
+    .product-info p {
+        font-size: 14px;
+    }
+
+    .location-content {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .location-content h2 {
+        font-size: 72px;
+    }
+
+    .location-buttons {
+        flex-direction: column;
+    }
+
+    .location-buttons .button {
+        width: 100%;
+    }
+
+    .order-content h2 {
+        font-size: 20vw;
+        letter-spacing: -5px;
+    }
+
+    .footer {
+        padding: 55px 22px 25px;
+    }
+
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .footer-info,
+    .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+/* =========================================
+   ZARK BURGER INTRO ANIMATION
+========================================= */
+
+.zark-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    overflow: hidden;
+
+    pointer-events: none;
+
+    animation: zarkIntroExit 0.7s ease 2.1s forwards;
+}
+
+/* KIRMIZI DAİRE */
+.intro-red-circle {
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: #ed1c24;
+
+    transform: scale(0);
+
+    animation: zarkCircleIn 0.8s cubic-bezier(.2,.85,.25,1) 0.15s forwards;
+}
+
+/* BURGER */
+.intro-burger {
+    position: relative;
+    z-index: 2;
+
+    width: min(60vw, 480px);
+
+    opacity: 0;
+
+    transform:
+        scale(0.55)
+        translateY(60px)
+        rotate(-6deg);
+
+    filter:
+        drop-shadow(0 25px 25px rgba(0, 0, 0, 0.20));
+
+    animation:
+        zarkBurgerIn
+        0.9s
+        cubic-bezier(.18,.85,.25,1)
+        0.45s
+        forwards;
+}
+
+/* LOGO */
+.intro-logo {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 120px;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+
+    transform:
+        translateY(-155px)
+        scale(0.7);
+
+    animation:
+        zarkLogoIn
+        0.6s
+        cubic-bezier(.2,.8,.2,1)
+        1.15s
+        forwards;
+}
+
+.intro-logo img {
+    width: 78px;
+    height: auto;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes zarkCircleIn {
+
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes zarkBurgerIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            scale(0.55)
+            translateY(60px)
+            rotate(-6deg);
+    }
+
+    65% {
+        opacity: 1;
+
+        transform:
+            scale(1.05)
+            translateY(-8px)
+            rotate(2deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotate(0);
+    }
+}
+
+
+@keyframes zarkLogoIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(-155px)
+            scale(0.7);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(-175px)
+            scale(1);
+    }
+}
+
+
+/* INTRO KAYBOLUYOR */
+
+@keyframes zarkIntroExit {
+
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+/* =========================================
+   MOBİL
+========================================= */
+
+@media (max-width: 700px) {
+
+    .intro-red-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .intro-burger {
+        width: 85vw;
+    }
+
+    .intro-logo {
+        width: 95px;
+        height: 95px;
+
+        transform:
+            translateY(-120px)
+            scale(0.7);
+    }
+
+    .intro-logo img {
+        width: 62px;
+    }
+
+    @keyframes zarkLogoIn {
+
+        0% {
+            opacity: 0;
+
+            transform:
+                translateY(-120px)
+                scale(0.7);
+        }
+
+        100% {
+            opacity: 1;
+
+            transform:
+                translateY(-135px)
+                scale(1);
+        }
+    }
+}
+.zark-intro.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+/* =====================================================
+   ZARK BURGER — OPENING SCREEN
+===================================================== */
+
+.zark-opening {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    animation: openingExit 0.8s ease 3.2s forwards;
+}
+
+
+/* KIRMIZI ALAN */
+
+.opening-red {
+    position: absolute;
+
+    width: 55vw;
+    height: 55vw;
+
+    max-width: 720px;
+    max-height: 720px;
+
+    min-width: 380px;
+    min-height: 380px;
+
+    border-radius: 50%;
+
+    background: #ED1C24;
+
+    transform: scale(0);
+
+    animation:
+        openingRedIn
+        1s
+        cubic-bezier(.16,1,.3,1)
+        .15s
+        forwards;
+}
+
+
+/* İÇERİK */
+
+.opening-content {
+    position: relative;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    animation:
+        openingContentIn
+        .9s
+        cubic-bezier(.16,1,.3,1)
+        .65s
+        forwards;
+}
+
+
+/* LOGO */
+
+.opening-logo {
+    width: 115px;
+    height: 115px;
+
+    object-fit: contain;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    padding: 13px;
+
+    margin-bottom: 22px;
+
+    box-shadow:
+        0 15px 45px rgba(0,0,0,.16);
+
+    transform: scale(.5) rotate(-12deg);
+
+    animation:
+        openingLogoIn
+        .7s
+        cubic-bezier(.16,1,.3,1)
+        .9s
+        forwards;
+}
+
+
+/* ZARK BURGER YAZISI */
+
+.opening-title {
+    display: flex;
+    flex-direction: column;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-weight: 900;
+
+    font-size: clamp(48px, 8vw, 110px);
+
+    line-height: .78;
+
+    letter-spacing: -5px;
+
+    color: #ffffff;
+
+    text-transform: uppercase;
+
+    transform: scale(.85);
+
+    animation:
+        openingTitleIn
+        .8s
+        cubic-bezier(.16,1,.3,1)
+        1.15s
+        forwards;
+}
+
+.opening-title span:last-child {
+    color: #171717;
+}
+
+
+/* ÇİZGİ */
+
+.opening-line {
+    width: 0;
+
+    height: 5px;
+
+    background: #ffffff;
+
+    margin-top: 28px;
+
+    animation:
+        openingLineIn
+        .65s
+        ease
+        1.65s
+        forwards;
+}
+
+
+/* ALT YAZI */
+
+.opening-text {
+    margin-top: 16px;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    color: #ffffff;
+
+    opacity: 0;
+
+    animation:
+        openingTextIn
+        .6s
+        ease
+        1.9s
+        forwards;
+}
+
+
+/* ALT KÖŞE */
+
+.opening-bottom {
+    position: absolute;
+
+    bottom: 28px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 10;
+
+    color: #171717;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    animation:
+        openingBottomIn
+        .6s
+        ease
+        2.1s
+        forwards;
+}
+
+
+/* =====================================================
+   ANİMASYONLAR
+===================================================== */
+
+@keyframes openingRedIn {
+
+    0% {
+        transform: scale(0);
+    }
+
+    70% {
+        transform: scale(1.08);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+@keyframes openingContentIn {
+
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes openingLogoIn {
+
+    0% {
+        transform:
+            scale(.5)
+            rotate(-12deg);
+
+        opacity: 0;
+    }
+
+    70% {
+        transform:
+            scale(1.08)
+            rotate(3deg);
+    }
+
+    100% {
+        transform:
+            scale(1)
+            rotate(0);
+
+        opacity: 1;
+    }
+}
+
+
+@keyframes openingTitleIn {
+
+    0% {
+        opacity: 0;
+        transform: scale(.85);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes openingLineIn {
+
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 180px;
+    }
+}
+
+
+@keyframes openingTextIn {
+
+    0% {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes openingBottomIn {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* EKRANDAN ÇIKIŞ */
+
+@keyframes openingExit {
+
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.04);
+    }
+}
+
+
+/* =====================================================
+   MOBİL
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .opening-red {
+        width: 95vw;
+        height: 95vw;
+
+        min-width: 300px;
+        min-height: 300px;
+    }
+
+    .opening-logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .opening-title {
+        font-size: 58px;
+        letter-spacing: -3px;
+    }
+
+    .opening-line {
+        height: 4px;
+    }
+
+    .opening-bottom {
+        bottom: 20px;
+    }
+}
+/* =========================================
+   ZARK HERO - REAL SMASH BURGER
+========================================= */
+
+.hero-burger {
+    position: absolute;
+    right: 3vw;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 52%;
+    height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3;
+}
+
+.hero-burger-image {
+    width: 100%;
+    max-width: 780px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 35px 35px rgba(0,0,0,.18));
+
+    animation: burgerFloat 4s ease-in-out infinite;
+}
+
+.burger-glow {
+    position: absolute;
+
+    width: 520px;
+    height: 520px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(237,28,36,.18) 0%,
+            rgba(237,28,36,.08) 40%,
+            transparent 70%
+        );
+
+    z-index: -1;
+
+    animation: burgerGlow 4s ease-in-out infinite;
+}
+
+
+/* BURGER HAFİF HAVADA SÜZÜLSÜN */
+
+@keyframes burgerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-0.6deg);
+    }
+}
+
+
+/* KIRMIZI IŞIK HAFİF NEFES ALSIN */
+
+@keyframes burgerGlow {
+
+    0%,
+    100% {
+        transform: scale(.95);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+
+/* MOBİL */
+
+@media (max-width: 900px) {
+
+    .hero-burger {
+        position: relative;
+
+        right: auto;
+        top: auto;
+
+        transform: none;
+
+        width: 100%;
+        height: 360px;
+
+        margin-top: 20px;
+    }
+
+    .hero-burger-image {
+        width: 110%;
+    }
+
+    .burger-glow {
+        width: 300px;
+        height: 300px;
+    }
+}
+/* ZARK HERO - TAM EKRAN ARKA PLAN */
+
+.hero {
+    position: relative;
+    min-height: calc(100vh - 70px);
+
+    background-color: #f7f3ec;
+
+background-image:
+    linear-gradient(
+        90deg,
+        rgba(247,243,236,0.98) 0%,
+        rgba(247,243,236,0.94) 27%,
+        rgba(247,243,236,0.60) 48%,
+        rgba(247,243,236,0.08) 75%
+    ),
+    url("images/zark-hero-burger.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+}
+/* =========================================
+   ZARK HERO - TEMİZ RENK GEÇİŞİ
+========================================= */
+
+.hero {
+    position: relative;
+    min-height: calc(100vh - 70px);
+
+    background-color: #f7f3ec;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #f7f3ec 0%,
+            #f7f3ec 30%,
+            rgba(247,243,236,0.92) 40%,
+            rgba(247,243,236,0.45) 50%,
+            rgba(247,243,236,0.08) 62%,
+            rgba(247,243,236,0) 72%
+        ),
+        url("images/zark-hero-burger.png");
+
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+/* =========================
+   MOBILE HERO FIX
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 780px;
+        background-position: 72% center;
+        background-size: auto 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(247, 247, 245, 0.98) 0%,
+            rgba(247, 247, 245, 0.92) 42%,
+            rgba(247, 247, 245, 0.65) 62%,
+            rgba(247, 247, 245, 0.15) 100%
+        );
+        z-index: 0;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        padding: 70px 20px 40px;
+    }
+
+    .hero-title {
+        font-size: clamp(54px, 16vw, 82px);
+        line-height: 0.88;
+        letter-spacing: -0.06em;
+        max-width: 100%;
+    }
+
+    .hero-subtitle {
+        max-width: 330px;
+        font-size: 17px;
+        line-height: 1.45;
+    }
+
+    .hero-actions {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero-actions a,
+    .hero-actions button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-meta {
+        margin-top: 30px;
+        width: 100%;
+    }
+
+}
+@media (max-width: 768px) {
+
+    .hero-title {
+        font-size: 13vw !important;
+        line-height: 0.9 !important;
+        letter-spacing: -0.055em !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+    }
+
+    .hero-title span {
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+    }
+
+}
+/* MOBIL BASLIK DUZELTMESI */
+@media (max-width: 768px) {
+
+    .hero h1 {
+        font-size: 13vw !important;
+        line-height: 0.9 !important;
+        letter-spacing: -0.05em !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .hero h1 span {
+        display: block !important;
+        white-space: nowrap !important;
+    }
+
+}
+/* =========================
+   MOBILE HERO IMAGE
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        background-position: 82% center !important;
+    }
+
+    .hero::before {
+        background: linear-gradient(
+            90deg,
+            rgba(247, 247, 245, 0.98) 0%,
+            rgba(247, 247, 245, 0.94) 35%,
+            rgba(247, 247, 245, 0.72) 55%,
+            rgba(247, 247, 245, 0.20) 78%,
+            rgba(247, 247, 245, 0) 100%
+        ) !important;
+    }
+
+}
+/* =========================
+   ZARK - SMALL TEXT TYPOGRAPHY
+========================= */
+
+.hero-subtitle {
+    font-family: "Arial", sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.01em;
+}
+
+.hero-description {
+    font-family: "Arial", sans-serif !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.01em;
+    line-height: 1.65 !important;
+}
+
+.hero-stats {
+    font-family: "Arial", sans-serif !important;
+}
+
+.hero-stats strong {
+    font-weight: 800 !important;
+    letter-spacing: 0.02em;
+}
+
+.hero-stats span {
+    font-weight: 500 !important;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.hero-location,
+.hero-meta,
+small {
+    font-family: "Arial", sans-serif !important;
+    letter-spacing: 0.08em;
+}
+
+.button {
+    font-family: "Arial", sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.08em;
+}
+/* =========================
+   MOBILE OPENING SCREEN
+========================= */
+
+@media (max-width: 768px) {
+
+    .zark-opening {
+        padding: 20px;
+    }
+
+    .opening-red {
+        width: 72vw;
+        height: 72vw;
+        max-width: 330px;
+        max-height: 330px;
+    }
+
+    .opening-content {
+        transform: scale(0.78);
+    }
+
+    .opening-bottom {
+        bottom: 35px;
+        left: 20px;
+        font-size: 11px;
+        letter-spacing: 0.18em;
+    }
+
+}
+/* =========================
+   MOBILE OPENING - FINAL
+========================= */
+
+@media (max-width: 768px) {
+
+    .zark-opening {
+        padding: 0;
+    }
+
+    .opening-red {
+        width: 76vw !important;
+        height: 76vw !important;
+        max-width: 310px !important;
+        max-height: 310px !important;
+    }
+
+    .opening-content {
+        transform: none !important;
+        width: 76vw !important;
+        max-width: 310px !important;
+    }
+
+    .opening-title {
+        font-size: 48px !important;
+        line-height: 0.82 !important;
+    }
+
+    .opening-title span {
+        display: block;
+    }
+
+    .opening-line {
+        width: 150px !important;
+        margin: 18px auto !important;
+    }
+
+    .opening-text {
+        font-size: 10px !important;
+        letter-spacing: 0.18em !important;
+        white-space: nowrap !important;
+    }
+
+    .opening-bottom {
+        bottom: 28px !important;
+        left: 20px !important;
+        font-size: 10px !important;
+        letter-spacing: 0.16em !important;
+    }
+}
+@media (max-width: 768px) {
+
+    .opening-bottom {
+        left: 50% !important;
+        right: auto !important;
+        bottom: 28px !important;
+        transform: translateX(-50%) !important;
+        width: max-content !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        font-size: 10px !important;
+        letter-spacing: 0.16em !important;
+    }
+
+    .opening-text {
+        font-size: 11px !important;
+        letter-spacing: 0.15em !important;
+        white-space: nowrap !important;
+    }
+
+}@media (max-width: 768px) {
+
+    .opening-bottom {
+        left: 50% !important;
+        right: auto !important;
+        bottom: 28px !important;
+        transform: translateX(-50%) !important;
+        width: max-content !important;
+        white-space: nowrap !important;
+        text-align: center !important;
+        font-size: 10px !important;
+        letter-spacing: 0.16em !important;
+    }
+
+    .opening-text {
+        font-size: 11px !important;
+        letter-spacing: 0.15em !important;
+        white-space: nowrap !important;
+    }
+
+}
+/* =========================
+   ZARK MOBILE INTRO - CLEAN
+========================= */
+
+@media (max-width: 768px) {
+
+    .zark-opening {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100dvh;
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        z-index: 99999;
+    }
+
+    .opening-red {
+        position: absolute;
+        width: 72vw !important;
+        height: 72vw !important;
+        max-width: 300px !important;
+        max-height: 300px !important;
+        border-radius: 50%;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .opening-content {
+        position: absolute;
+        width: 72vw !important;
+        max-width: 300px !important;
+        height: 72vw !important;
+        max-height: 300px !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        z-index: 2;
+        text-align: center;
+    }
+
+    .opening-logo {
+        width: 58px !important;
+        height: auto !important;
+        margin-bottom: 18px !important;
+    }
+
+    .opening-title {
+        font-size: 42px !important;
+        line-height: 0.82 !important;
+        letter-spacing: -0.055em !important;
+        margin: 0 !important;
+        text-align: center;
+    }
+
+    .opening-title span {
+        display: block !important;
+    }
+
+    .opening-line {
+        width: 145px !important;
+        height: 4px !important;
+        margin: 18px auto 12px !important;
+    }
+
+    .opening-text {
+        font-size: 9px !important;
+        line-height: 1 !important;
+        letter-spacing: 0.16em !important;
+        white-space: nowrap !important;
+        margin: 0 !important;
+    }
+
+    .opening-bottom {
+        position: absolute !important;
+        left: 50% !important;
+        bottom: 30px !important;
+        transform: translateX(-50%) !important;
+
+        width: max-content !important;
+        text-align: center !important;
+
+        font-size: 10px !important;
+        letter-spacing: 0.14em !important;
+        white-space: nowrap !important;
+
+        z-index: 3;
+    }
+}
+/* =========================
+   LOCATION - MOBILE REDESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .location-section {
+        padding: 80px 23px 70px !important;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .location-section::after {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        background: #ed1c24;
+        border-radius: 50%;
+        right: -110px;
+        bottom: -70px;
+        opacity: 0.10;
+    }
+
+    .location-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .location-title small {
+        display: block;
+        margin-bottom: 18px;
+        color: #ed1c24;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.30em;
+    }
+
+    .location-title h2 {
+        font-size: 68px !important;
+        line-height: 0.88 !important;
+        letter-spacing: -0.06em !important;
+        margin: 0 !important;
+        white-space: nowrap;
+    }
+
+    .location-title h2 span {
+        color: #ed1c24;
+    }
+
+    .location-line {
+        width: 90px !important;
+        height: 4px !important;
+        margin: 28px 0 45px !important;
+        background: #ed1c24;
+    }
+
+    .location-details {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .location-details p {
+        margin: 0 !important;
+        font-size: 15px !important;
+        line-height: 1.7 !important;
+        color: #555 !important;
+    }
+
+    .location-details p strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #171717 !important;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+    }
+
+    .location-details p:last-of-type {
+        font-size: 18px !important;
+        font-weight: 800;
+        color: #171717 !important;
+    }
+
+    .location-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .location-buttons .button {
+        width: 100%;
+        min-height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+/* =========================
+   LOCATION - FINAL MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .location-section {
+        padding: 70px 24px 55px !important;
+    }
+
+    .location-title h2 {
+        font-size: 15.5vw !important;
+        line-height: 0.9 !important;
+        letter-spacing: -0.055em !important;
+        white-space: nowrap !important;
+    }
+
+    .location-line {
+        width: 88px !important;
+        margin: 24px 0 34px !important;
+    }
+
+    .location-details {
+        gap: 22px !important;
+    }
+
+    .location-details p {
+        font-size: 14px !important;
+        line-height: 1.65 !important;
+    }
+
+    .location-details p strong {
+        font-size: 12px !important;
+        margin-bottom: 3px !important;
+    }
+
+    .location-details p:last-of-type {
+        font-size: 17px !important;
+    }
+
+    .location-buttons {
+        margin-top: 2px !important;
+    }
+
+}
